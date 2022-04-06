@@ -1,0 +1,66 @@
+#div1 {
+  background: lightblue;
+  padding: 10px 30px;
+}
+
+.div2 {
+  padding: 10px;
+  background: lightcyan;
+}
+
+.div3 {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+body {
+  padding: 10px;
+  color: navy;
+  font-family: "Segoe UI";
+  background: lightcyan;
+}
+
+button {
+  border-radius: 0;
+  border: 2px solid black;
+  padding: 10px;
+  background: white;
+  color: navy;
+}
+button:hover {
+  background: whitesmoke;
+}
+
+div {
+  margin: 5px 0;
+}
+
+h1 {
+  font-weight: normal;
+  margin-top: 0;
+}
+
+pre {
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+#command {
+  width: 300px;
+}
+
+#port {
+  width: 45px;
+}
+
+#ip {
+  width: 90px;
+}
+
+#url {
+  width: 330px;
+}
+
+.indent {
+  margin-left: 35px;
+}
