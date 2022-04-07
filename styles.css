@@ -65,7 +65,8 @@ pre {
   margin-left: 35px;
 }
 
-.full {
-  width: 100%;
-  height: 200px;
+#results {
+  width: 900px;
+  max-width: 100%;
+  height: 150px;
 }

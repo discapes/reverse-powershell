@@ -12,7 +12,7 @@
 
 <body>
     <div id="div1">
-        <h1>Quick reverse shell builder</h1>
+        <h1>Quick reverse shell builder (Windows)</h1>
 
         <div>
             <label for="ip">ip:</label>
@@ -22,28 +22,35 @@
             <label for="ip">port:</label>
             <input type="field" id="port" name="wrapper" value="4444">
         </div>
-        <div>
-            <label for="command">powercat -e:</label>
-            <input type="field" id="command" name="wrapper" value="powershell">
-        </div>
 
         <p><u>select payload:</u></p>
         <div>
-            <input type="radio" id="minimal" name="script" value="minimal" checked>
-            <label for="minimal">minimal (noninteractive ps)</label>
+            <input type="radio" id="minimal" name="script" value="minimal">
+            <label for="minimal">minimal (noninteractive powershell)</label>
         </div>
+        <div>
+            <input type="radio" id="minimal2" name="script" value="minimal2" checked>
+            <label for="minimal2">minimal-2 (above but with stderr)</label>
+        </div>
+        <div>
+            <input type="radio" id="minimalssl" name="script" value="minimalssl">
+            <label for="minimalssl">minimal-ssl (above but over ssl)</label>
+        </div>
+
 
 
         <div>
             <input type="radio" id="powercat" name="script" value="powercat">
             <label for="powercat">powercat</label>
+            <div class="indent">
+                <label for="command">command (-e):</label>
+                <input type="field" id="command" name="wrapper" value="powershell">
+            </div>
+            <div class="indent">
+                <label for="dashg">shorter (-g)</label>
+                <input type="checkbox" id="dashg" checked>
+            </div>
         </div>
-
-        <div>
-            <input type="radio" id="powercat2" name="script" value="powercat2">
-            <label for="powercat2">powercat -g</label>
-        </div>
-
 
         <div>
             <input type="radio" id="custom" name="script" value="custom">
@@ -58,12 +65,12 @@
 
         <div>
             <input type="radio" id="nowrapper" name="wrapper" value="nowrapper">
-            <label for="nowrapper">powershell script</label>
+            <label for="nowrapper">powershell</label>
         </div>
 
         <div>
             <input type="radio" id="debugwrapper" name="wrapper" value="debugwrapper">
-            <label for="debugwrapper">Run (open ps)</label>
+            <label for="debugwrapper">Run (opens ps for debug)</label>
         </div>
 
         <div>
@@ -83,13 +90,10 @@
         <div class="div3">
             <button onclick="generate()">Generate</button>
             <div class="indent div2">
-                <pre>Use '<b><a href="https://nmap.org/ncat/">ncat</a> -lv &ltport&gt</b>' for listening</pre>
+                <pre>Use '<b><a href="https://nmap.org/ncat/">ncat</a> -lv &ltport&gt</b> <i>[--ssl]</i>' for listening</pre>
             </div>
             <div class="indent div2">
-                <pre>Tip: for commands too large for Run, paste them into File Explorer</pre>
-            </div>
-            <div class="indent div2">
-                <pre>More: <a href="https://rcxonline.cf/">rcxonline.cf</a></pre>
+                <pre>Tip: paste long commands into File Explorer, otherwise Run</pre>
             </div>
 
         </div>
