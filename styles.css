@@ -46,7 +46,7 @@ pre {
 }
 
 #command {
-  width: 300px;
+  width: 100px;
 }
 
 #port {
@@ -63,4 +63,9 @@ pre {
 
 .indent {
   margin-left: 35px;
+}
+
+.full {
+  width: 100%;
+  height: 200px;
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>Reverse-powershell</title>
+    <title>power-reverse</title>
 
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.js"></script>
@@ -12,7 +12,7 @@
 
 <body>
     <div id="div1">
-        <h1>Powershell reverse shell builder</h1>
+        <h1>Quick reverse shell builder</h1>
 
         <div>
             <label for="ip">ip:</label>
@@ -23,54 +23,58 @@
             <input type="field" id="port" name="wrapper" value="4444">
         </div>
         <div>
-            <label for="command">command:</label>
+            <label for="command">powercat -e:</label>
             <input type="field" id="command" name="wrapper" value="powershell">
         </div>
 
-        <p>Select reverse shell:</p>
+        <p><u>select payload:</u></p>
         <div>
             <input type="radio" id="minimal" name="script" value="minimal" checked>
-            <label for="minimal">Minimal (noninteractive)</label>
+            <label for="minimal">minimal (noninteractive ps)</label>
         </div>
 
 
         <div>
             <input type="radio" id="powercat" name="script" value="powercat">
-            <label for="powercat">Powercat</label>
+            <label for="powercat">powercat</label>
         </div>
 
         <div>
             <input type="radio" id="powercat2" name="script" value="powercat2">
-            <label for="powercat2">Powercat -g</label>
+            <label for="powercat2">powercat -g</label>
         </div>
 
 
         <div>
             <input type="radio" id="custom" name="script" value="custom">
-            <label for="custom">Custom</label>
+            <label for="custom">custom</label>
             <div class="indent">
                 <label for="url">url:</label>
                 <input type="field" id="url" name="wrapper" value="">
             </div>
         </div>
 
-        <p>Select delivery:</p>
+        <p><u>activation method:</u></p>
 
         <div>
             <input type="radio" id="nowrapper" name="wrapper" value="nowrapper">
-            <label for="nowrapper">Just the script</label>
+            <label for="nowrapper">powershell script</label>
         </div>
 
         <div>
             <input type="radio" id="debugwrapper" name="wrapper" value="debugwrapper">
-            <label for="debugwrapper">Open powershell</label>
+            <label for="debugwrapper">Run (open ps)</label>
         </div>
 
         <div>
-            <input type="radio" id="wrapper" name="wrapper" value="wrapper" checked>
-            <label for="wrapper">Open hidden with bypass</label>
+            <input type="radio" id="wrapper" name="wrapper" value="wrapper">
+            <label for="wrapper">Run (hidden, bypass)</label>
         </div>
 
+        <div>
+            <input type="radio" id="admin" name="wrapper" value="admin" checked>
+            <label for="admin">Run (hidden, bypass, admin)</label>
+        </div>
 
 
 
@@ -84,10 +88,13 @@
             <div class="indent div2">
                 <pre>Tip: for commands too large for Run, paste them into File Explorer</pre>
             </div>
-  
+            <div class="indent div2">
+                <pre>More: <a href="https://rcxonline.cf/">rcxonline.cf</a></pre>
+            </div>
+
         </div>
-        <div class="div2">
-            <pre id="results"></pre>
-        </div>
+
+        <textarea class="div2 full" id="results">
+        </textarea>
     </div>
 </body>
