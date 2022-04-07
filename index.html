@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Testing!</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+
+</head>
+
+<body>
+    <div id="div1">
+        <h1>Powershell reverse shell builder</h1>
+
+        <div>
+            <label for="ip">ip:</label>
+            <input type="field" id="ip" name="wrapper" value="127.0.0.1">
+        </div>
+        <div>
+            <label for="ip">port:</label>
+            <input type="field" id="port" name="wrapper" value="4444">
+        </div>
+        <div>
+            <label for="command">command:</label>
+            <input type="field" id="command" name="wrapper" value="powershell">
+        </div>
+
+        <p>Select reverse shell:</p>
+        <div>
+            <input type="radio" id="minimal" name="script" value="minimal">
+            <label for="minimal">Minimal (noninteractive)</label>
+        </div>
+
+
+        <div>
+            <input type="radio" id="powercat" name="script" value="powercat">
+            <label for="powercat">Powercat</label>
+        </div>
+
+        <div>
+            <input type="radio" id="powercat2" name="script" value="powercat2" checed>
+            <label for="powercat2">Powercat -g</label>
+        </div>
+
+
+        <div>
+            <input type="radio" id="custom" name="script" value="custom">
+            <label for="custom">Custom</label>
+            <div class="indent">
+                <label for="url">url:</label>
+                <input type="field" id="url" name="wrapper" value="">
+            </div>
+        </div>
+
+        <p>Select delivery:</p>
+
+        <div>
+            <input type="radio" id="nowrapper" name="wrapper" value="nowrapper">
+            <label for="nowrapper">Just the script</label>
+        </div>
+
+        <div>
+            <input type="radio" id="debugwrapper" name="wrapper" value="debugwrapper">
+            <label for="debugwrapper">Open powershell</label>
+        </div>
+
+        <div>
+            <input type="radio" id="wrapper" name="wrapper" value="wrapper" checked>
+            <label for="wrapper">Open hidden with bypass</label>
+        </div>
+
+
+
+
+        <br>
+
+        <div class="div3">
+            <button onclick="generate()">Generate</button>
+            <div class="indent div2">
+                <pre>Use '<b><a href="https://nmap.org/ncat/">ncat</a> -lv &ltport&gt</b>' for listening</pre>
+            </div>
+            <div class="indent div2">
+                <pre>Tip: for commands too large for Run, paste them into File Explorer</pre>
+            </div>
+  
+        </div>
+        <div class="div2">
+            <pre id="results"></pre>
+        </div>
+    </div>
+</body>
+
+
+</html>
